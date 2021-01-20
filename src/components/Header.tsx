@@ -1,10 +1,10 @@
-import React from "react";
-import { AppBar, Toolbar, IconButton, Typography } from "@material-ui/core";
-import MenuIcon from "@material-ui/icons/Menu";
-import SettingsIcon from "@material-ui/icons/Settings";
+import React from 'react';
+import { AppBar, Toolbar, IconButton, Typography } from '@material-ui/core';
+import MenuIcon from '@material-ui/icons/Menu';
+import SettingsIcon from '@material-ui/icons/Settings';
 
-import icon from "../learning_language.svg";
-import useStyles from "./Header.style";
+import icon from '../learning_language.svg';
+import useStyles from './Header.style';
 
 const Header: React.FC = () => {
 	const classes = useStyles();
