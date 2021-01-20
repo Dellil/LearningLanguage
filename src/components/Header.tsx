@@ -10,7 +10,7 @@ const Header: React.FC = () => {
 	const classes = useStyles();
 
 	return (
-		<AppBar>
+		<AppBar position="relative">
 			<Toolbar>
 				<IconButton color="inherit" edge="start">
 					<MenuIcon />
