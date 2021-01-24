@@ -7,7 +7,10 @@ const Main: React.FC = () => {
 	// if(userStore.isLogined) {}
 	// Login Validation Logic
 
-	return <div>asdf</div>;
+	return (
+		<>
+			<div>asdf</div>
+		</>
+	);
 };
-
 export default Main;
