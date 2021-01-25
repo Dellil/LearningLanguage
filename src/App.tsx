@@ -25,7 +25,6 @@ const App: React.FC = () => {
 			<Router>
 				<Header />
 				<Switch>
-					{/* 로그인 됨? 안 됨? */}
 					<Route path="/" exact component={Main} />
 				</Switch>
 			</Router>

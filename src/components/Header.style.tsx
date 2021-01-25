@@ -5,7 +5,7 @@ export default makeStyles(() => ({
 		flexGrow: 1,
 	},
 	img: {
-		width: '48px',
-		height: '48px',
+		width: '32px',
+		height: '32px',
 	},
 }));

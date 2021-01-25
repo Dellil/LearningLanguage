@@ -5,6 +5,8 @@ import App from './App';
 import 'fontsource-roboto';
 import './index.css';
 
+import './firebaseInit';
+
 ReactDOM.render(
 	<React.StrictMode>
 		<App />
