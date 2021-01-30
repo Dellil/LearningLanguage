@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import * as Sentry from '@sentry/react';
 import { Integrations } from '@sentry/tracing';
 
-import Header from './components/Header';
 import Main from './components/Main';
 import StoreContext, { stores } from './stores';
 
@@ -23,7 +22,6 @@ const App: React.FC = () => {
 	return (
 		<StoreContext.Provider value={stores}>
 			<Router>
-				<Header />
 				<Switch>
 					<Route path="/" exact component={Main} />
 				</Switch>

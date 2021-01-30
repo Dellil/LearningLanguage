@@ -7,15 +7,10 @@ Click [here](https://learninglanguage.netlify.app/) to enter this project!
 - React
 - typescript
 - MobX
-- material-ui
+- Self made UI Library
 - testing frameworks (like jest, jest-dom, @testing-library/react)
 - eslint, prettier
 - sentry
-
-### Components
-
-- [x] Header
-
 ---
 
 ### Issues
