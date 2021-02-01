@@ -12,8 +12,16 @@ export default {
 
 const Template: Story<ButtonProps> = args => <Button {...args} />;
 
-export const TestButton = Template.bind({});
+export const FilledButton = Template.bind({});
 
-TestButton.args = {
+FilledButton.args = {
 	children: 'asdf',
+	size: 'large',
+};
+
+export const GhostButton = Template.bind({});
+
+GhostButton.args = {
+	children: "I'm ghost!",
+	theme: 'ghost',
 };
