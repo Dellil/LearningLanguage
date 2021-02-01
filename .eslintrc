@@ -14,10 +14,11 @@
         "react/react-in-jsx-scope": "off",
         "import/extensions": [0],
         "react/jsx-indent": [0],
-        "react/jsx-indent-props": ["error", 4],
+        "react/jsx-indent-props": [0],
         "react/prop-types": "off",
         "react/jsx-filename-extension": "off",
         "no-param-reassign": "off",
-        "class-methods-use-this": "off"
+        "class-methods-use-this": "off",
+        "import/no-extraneous-dependencies": "off"
     }
 }
