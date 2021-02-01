@@ -1,6 +1,3 @@
-/** @jsxRuntime classic */
-/** @jsx jsx */
-import { jsx } from '@emotion/core';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
@@ -160,7 +157,7 @@ const Button: React.FC<ButtonProps> = ({
 	const buttonSize = sizes[size];
 
 	// TEMP VARIABLES
-	return <ButtonBase css={buttonTheme}>{children}</ButtonBase>;
+	return <ButtonBase css={[buttonTheme, buttonSize]}>{children}</ButtonBase>;
 };
 
 export default Button;
