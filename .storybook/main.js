@@ -1,6 +1,22 @@
-const path = require("path")
+const path = require("path");
+const fs = require("fs");
+const { merge } = require("webpack-merge");
 
-const toPath = (_path) => path.join(process.cwd(), _path)
+function getPackageDir(filepath) {
+  let currDir = path.dirname(require.resolve(filepath));
+  while (true) {
+    if (fs.existsSync(path.join(currDir, "package.json"))) {
+      return currDir;
+    }
+    const { dir, root } = path.parse(currDir);
+    if (dir === root) {
+      throw new Error(
+        `Could not find package.json in the parent directories starting from ${filepath}.`
+      );
+    }
+    currDir = dir;
+  }
+}
 
 module.exports = {
   "stories": [
@@ -12,20 +28,18 @@ module.exports = {
     "@storybook/addon-essentials",
     "@storybook/preset-create-react-app",
     "@storybook/addon-knobs",
-    '@storybook/addon-viewport'
+    '@storybook/addon-viewport',
+    'storybook-preset-craco'
   ],
   webpackFinal: async (config) => {
-    return {
-      ...config,
+    return merge(config, {
       resolve: {
-        ...config.resolve,
         alias: {
-          ...config.resolve.alias,
-          "@emotion/core": toPath("node_modules/@emotion/react"),
-          "@emotion/styled": toPath("node_modules/@emotion/styled"),
-          "emotion-theming": toPath("node_modules/@emotion/react")
-        }
-      }
-    }
-  }
+          "@emotion/core": getPackageDir("@emotion/react"),
+          "@emotion/styled": getPackageDir("@emotion/styled"),
+          "emotion-theming": getPackageDir("@emotion/react"),
+        },
+      },
+    });
+  },
 }
