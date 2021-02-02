@@ -18,3 +18,11 @@ Button.args = {
 	children: "I'M BUTTON!",
 	size: 'large',
 };
+
+export const WarningButton = Template.bind({});
+
+WarningButton.args = {
+	children: "I'M BUTTON!",
+	theme: 'warning',
+	size: 'small',
+};

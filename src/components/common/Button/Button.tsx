@@ -1,16 +1,15 @@
 import React from 'react';
 import { css } from '@emotion/react';
-import styled from '@emotion/styled';
 
-export interface ButtonProps {
-	/**
-	 * 버튼의 종류를 결정할 수 있습니다.
-	 */
-	theme?: 'filled' | 'ghost' | 'warning' | 'neutral' | 'borderless';
-	/**
-	 * 버튼의 크기를 결정할 수 있습니다.
-	 */
-	size?: 'large' | 'medium' | 'small' | 'tiny';
+import { Size, Theme } from './type';
+
+import FilledButton from './FilledButton';
+import GhostButton from './GhostButton';
+import WarningButton from './WarningButton';
+import NeutralButton from './NeutralButton';
+import BorderlessButton from './BorderlessButton';
+
+export interface ButtonProps extends Size, Theme {
 	/**
 	 * 아시죠?
 	 */
@@ -23,126 +22,17 @@ const Button: React.FC<ButtonProps> = ({
 	theme = 'filled',
 	size = 'medium',
 	disabled,
+	...props
 }) => {
 	const ThemeButton = themes[theme];
 	const buttonSize = sizes[size];
 
 	return (
-		<ThemeButton css={buttonSize} disabled={disabled}>
+		<ThemeButton css={buttonSize} {...props} size={size}>
 			{children}
 		</ThemeButton>
 	);
 };
-
-const ButtonBase = styled.button`
-	border: 0;
-
-	line-height: 165%;
-	border-radius: 8px;
-	font-weight: 500;
-	letter-spacing: -0.05em;
-
-	&:hover {
-		cursor: pointer;
-	}
-
-	&:disabled {
-		cursor: not-allowed;
-	}
-`;
-
-/**
- * Styled Component of BUTTON THEMES (EVERY Buttons extends ButtonBase!)
- */
-const filled = styled(ButtonBase)`
-	background-color: #2784ff;
-	color: #fff;
-
-	&:hover {
-		background-color: #70aeff;
-	}
-
-	&:active {
-		background-color: #0066ed;
-	}
-
-	&:disabled {
-		background-color: #add1ff;
-	}
-`;
-
-const ghost = styled(ButtonBase)`
-	background-color: #fff;
-	color: #2784ff;
-	border: 1px solid #2784ff;
-
-	&:hover {
-		color: #70aeef;
-		border: 1px solid #70aeef;
-	}
-
-	&:active {
-		color: #0066ed;
-		border: 1px solid #0066ed;
-	}
-
-	&:disabled {
-		color: #ebebeb;
-		border: 1px solid #ebebeb;
-	}
-`;
-
-const warning = styled(ButtonBase)`
-	background-color: #dd3d2a;
-	color: #fff;
-
-	&:hover {
-		background-color: #e8786a;
-	}
-
-	&:active {
-		background-color: #c71500;
-	}
-
-	&:disabled {
-		background-color: #f1b1aa;
-	}
-`;
-
-const neutral = styled(ButtonBase)`
-	background-color: #fff;
-	color: #707070;
-	border: 1px solid #f5f5f5;
-
-	&:hover {
-		color: #a3a3a3;
-	}
-
-	&:active {
-		color: #3d3d3d;
-	}
-
-	&:disabled {
-		color: #e0e0e0;
-	}
-`;
-
-const borderless = styled(ButtonBase)`
-	background-color: #fff;
-	color: #a3a3a3;
-
-	&:hover {
-		color: #c2c2c2;
-	}
-
-	&:active {
-		color: #3d3d3d;
-	}
-
-	&:disabled {
-		color: #e0e0e0;
-	}
-`;
 
 /**
  * CSS OF SIZES
@@ -175,11 +65,11 @@ const tiny = css`
 `;
 
 const themes = {
-	filled,
-	ghost,
-	warning,
-	neutral,
-	borderless,
+	filled: FilledButton,
+	ghost: GhostButton,
+	warning: WarningButton,
+	neutral: NeutralButton,
+	borderless: BorderlessButton,
 };
 
 const sizes = {

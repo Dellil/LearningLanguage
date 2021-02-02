@@ -1,9 +1,31 @@
 import React from 'react';
+import styled from '@emotion/styled';
 
-interface Props {}
+import BaseButton from './BaseButton';
 
-const FilledButton: React.FC<Props> = () => {
-	return <></>;
+interface Props {
+	children: React.ReactNode;
+}
+
+const FilledButton: React.FC<Props> = ({ children, ...props }) => {
+	return <Filled {...props}>{children}</Filled>;
 };
+
+const Filled = styled(BaseButton)`
+	background-color: #2784ff;
+	color: #fff;
+
+	&:hover {
+		background-color: #70aeff;
+	}
+
+	&:active {
+		background-color: #0066ed;
+	}
+
+	&:disabled {
+		background-color: #add1ff;
+	}
+`;
 
 export default FilledButton;
