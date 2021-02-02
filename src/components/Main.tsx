@@ -1,4 +1,7 @@
 import React from 'react';
+import { css } from '@emotion/react';
+
+import Button from './common/Button';
 
 // import useStore from 'store';
 
@@ -9,7 +12,14 @@ const Main: React.FC = () => {
 
 	return (
 		<>
-			<div>asdf</div>
+			<div
+				css={css`
+					background-color: red;
+				`}
+			>
+				asdf
+			</div>
+			<Button>asdf</Button>
 		</>
 	);
 };

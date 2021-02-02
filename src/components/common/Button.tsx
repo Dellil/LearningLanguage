@@ -1,3 +1,4 @@
+import React from 'react';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 
@@ -6,6 +7,18 @@ export interface ButtonProps {
 	size?: 'large' | 'medium' | 'small' | 'tiny';
 	children: React.ReactNode;
 }
+
+const Button: React.FC<ButtonProps> = ({
+	children,
+	theme = 'filled',
+	size = 'medium',
+}) => {
+	const buttonTheme = themes[theme];
+	const buttonSize = sizes[size];
+
+	// Object literal way
+	return <ButtonBase css={buttonTheme}>{children}</ButtonBase>;
+};
 
 const large = css`
 	font-size: 16px;
@@ -146,18 +159,6 @@ const sizes = {
 	medium,
 	small,
 	tiny,
-};
-
-const Button: React.FC<ButtonProps> = ({
-	children,
-	theme = 'filled',
-	size = 'medium',
-}) => {
-	const buttonTheme = themes[theme];
-	const buttonSize = sizes[size];
-
-	// TEMP VARIABLES
-	return <ButtonBase css={[buttonTheme, buttonSize]}>{children}</ButtonBase>;
 };
 
 export default Button;

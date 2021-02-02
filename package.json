@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@emotion/babel-preset-css-prop": "^11.0.0",
+    "@craco/craco": "^6.1.0",
     "@emotion/react": "^11.1.4",
     "@emotion/styled": "^11.0.0",
     "@jest/globals": "^26.6.2",
@@ -12,11 +12,6 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "@types/jest": "^26.0.15",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.53",
-    "@types/react-dom": "^16.9.8",
-    "@types/react-router-dom": "^5.1.7",
     "firebase": "^8.2.1",
     "history": "^5.0.0",
     "mobx": "^6.0.4",
@@ -28,10 +23,10 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "test:watch": "react-scripts test --watch",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "test:watch": "craco test --watch",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006 -s public",
     "build-storybook": "build-storybook -s public"
@@ -49,6 +44,7 @@
     ]
   },
   "devDependencies": {
+    "@emotion/babel-preset-css-prop": "^11.0.0",
     "@storybook/addon-actions": "^6.1.15",
     "@storybook/addon-essentials": "^6.1.15",
     "@storybook/addon-knobs": "^6.1.15",
@@ -57,6 +53,11 @@
     "@storybook/node-logger": "^6.1.15",
     "@storybook/preset-create-react-app": "^3.1.5",
     "@storybook/react": "^6.1.15",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.53",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-router-dom": "^5.1.7",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^7.1.0",
     "eslint-plugin-import": "^2.22.1",
@@ -66,6 +67,8 @@
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "eslint-plugin-testing-library": "^3.10.1",
-    "prettier": "^2.2.1"
+    "prettier": "^2.2.1",
+    "storybook-preset-craco": "^0.0.3",
+    "webpack-merge": "^5.7.3"
   }
 }
