@@ -33,15 +33,18 @@ const WarningButton: React.FC<Props> = ({ children, size, ...props }) => {
 		color: #dd3d2a;
 
 		&:hover {
-			background-color: #e8786a;
+			background-color: #fcecea;
+			color: #e8786a;
 		}
 
 		&:active {
-			background-color: #c71500;
+			background-color: #fcecea;
+			color: #c71500;
 		}
 
 		&:disabled {
-			background-color: #f1b1aa;
+			background-color: #fcecea;
+			color: #f1b1aa;
 		}
 	`;
 	const color = useRef(colorWhenSizeBig);

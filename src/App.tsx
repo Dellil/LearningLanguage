@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import * as Sentry from '@sentry/react';
 import { Integrations } from '@sentry/tracing';
@@ -18,7 +17,7 @@ Sentry.init({
 	tracesSampleRate: 1.0,
 });
 
-const App: React.FC = () => {
+const App = () => {
 	return (
 		<StoreContext.Provider value={stores}>
 			<Router>
