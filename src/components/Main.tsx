@@ -1,8 +1,6 @@
 import React from 'react';
 import { css } from '@emotion/react';
 
-import Button from './common/Button/Button';
-
 // import useStore from 'store';
 
 const Main: React.FC = () => {
@@ -19,7 +17,6 @@ const Main: React.FC = () => {
 			>
 				asdf
 			</div>
-			<Button>asdf</Button>
 		</>
 	);
 };
