@@ -2,7 +2,7 @@ import React from 'react';
 
 import * as svg from './svg';
 
-type Icons = keyof typeof svg;
+export type Icons = keyof typeof svg;
 
 type IconProps = {
 	name: Icons;

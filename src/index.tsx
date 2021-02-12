@@ -4,9 +4,6 @@ import { BrowserRouter as Router } from 'react-router-dom';
 
 import StoreContext, { stores } from './stores';
 import App from './App';
-import './index.css';
-
-import './firebaseInit';
 
 ReactDOM.render(
 	<React.StrictMode>

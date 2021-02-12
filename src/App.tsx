@@ -1,16 +1,18 @@
+import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { Global, css } from '@emotion/react';
 import * as Sentry from '@sentry/react';
 import { Integrations } from '@sentry/tracing';
 
 import AppLayout from './components/AppLayout';
+import Sidebar from './components/Sidebar';
 
 const App = () => {
 	return (
 		<>
 			<AppLayout>
 				<AppLayout.Side>
-					<div>asdf</div>
+					<Sidebar />
 				</AppLayout.Side>
 				<AppLayout.Main>
 					<div>asdf</div>
@@ -30,8 +32,13 @@ const style = css`
 		padding: 0;
 	}
 
+	html,
 	body {
 		margin: 0;
+		padding: 0;
+		width: 100%;
+		height: 100%;
+		font-size: 16px;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 	}
