@@ -1,13 +1,79 @@
-import {
-	BrowserRouter as Router,
-	Switch,
-	Route,
-	Redirect,
-} from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
+import { Global, css } from '@emotion/react';
 import * as Sentry from '@sentry/react';
 import { Integrations } from '@sentry/tracing';
 
-import StoreContext, { stores } from './stores';
+import AppLayout from './components/AppLayout';
+
+const App = () => {
+	return (
+		<>
+			<AppLayout>
+				<AppLayout.Side>
+					<div>asdf</div>
+				</AppLayout.Side>
+				<AppLayout.Main>
+					<div>asdf</div>
+				</AppLayout.Main>
+			</AppLayout>
+			<Global styles={style} />
+		</>
+	);
+};
+
+const style = css`
+	*,
+	*::before,
+	*::after {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+
+	body {
+		margin: 0;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	ul,
+	li {
+		list-style: none;
+	}
+
+	a {
+		text-decoration: none;
+		color: inherit;
+	}
+
+	input {
+		font-size: inherit;
+		font-family: inherit;
+		color: inherit;
+		outline: none;
+		border: none;
+		background: transparent;
+		appearance: none;
+		-webkit-appearance: none;
+	}
+
+	button {
+		font-size: inherit;
+		font-family: inherit;
+		color: inherit;
+		outline: none;
+		border: none;
+		background: transparent;
+	}
+
+	button:hover {
+		cursor: pointer;
+	}
+
+	button:disabled {
+		cursor: default;
+	}
+`;
 
 Sentry.init({
 	dsn:
@@ -20,13 +86,5 @@ Sentry.init({
 	// for finer control
 	tracesSampleRate: 1.0,
 });
-
-const App = () => {
-	return (
-		<StoreContext.Provider value={stores}>
-			<div>asdf</div>
-		</StoreContext.Provider>
-	);
-};
 
 export default Sentry.withProfiler(App);
