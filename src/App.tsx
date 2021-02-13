@@ -4,6 +4,11 @@ import { Global, css } from '@emotion/react';
 import * as Sentry from '@sentry/react';
 import { Integrations } from '@sentry/tracing';
 
+// PAGES FOLDER
+// CREATE
+import List from './pages/create/List';
+
+// COMPONENTS FOLDER
 import AppLayout from './components/AppLayout';
 import Sidebar from './components/Sidebar';
 
@@ -15,7 +20,12 @@ const App = () => {
 					<Sidebar />
 				</AppLayout.Side>
 				<AppLayout.Main>
-					<div>asdf</div>
+					<Switch>
+						<Route path="/create/list" exact component={List} />
+
+						{/* For Development! */}
+						<Redirect to="/create/list" />
+					</Switch>
 				</AppLayout.Main>
 			</AppLayout>
 			<Global styles={style} />
@@ -41,6 +51,11 @@ const style = css`
 		font-size: 16px;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
+	}
+
+	/* Define Variables */
+	#root {
+		--main-width: calc(100% - 20rem);
 	}
 
 	ul,

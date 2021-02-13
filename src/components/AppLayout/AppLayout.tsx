@@ -1,5 +1,4 @@
 import { css } from '@emotion/react';
-import styled from '@emotion/styled';
 
 export type AppLayoutProps = {
 	children: React.ReactNode;
@@ -37,8 +36,12 @@ const Main = ({ children }: MainProps) => {
 };
 
 const mainStyle = css`
+	position: fixed;
 	margin-left: 20rem;
-	width: 100%;
+	width: var(--main-width);
+	height: 100%;
+
+	padding: 30px 20px 30px 0;
 `;
 
 AppLayout.Side = Side;
