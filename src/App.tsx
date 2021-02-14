@@ -34,6 +34,7 @@ const App = () => {
 };
 
 const style = css`
+	@import url('https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css');
 	*,
 	*::before,
 	*::after {
@@ -49,6 +50,7 @@ const style = css`
 		width: 100%;
 		height: 100%;
 		font-size: 16px;
+		font-family: 'Spoqa Han Sans Neo' !important;
 		-webkit-font-smoothing: antialiased;
 		-moz-osx-font-smoothing: grayscale;
 	}
