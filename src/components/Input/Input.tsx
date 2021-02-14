@@ -31,6 +31,7 @@ const inputLabel = css`
 `;
 const input = css`
 	width: 350px;
+	padding: 0px 10px;
 	height: 40px;
 
 	border: 1px solid ${palette.blue[600]};
