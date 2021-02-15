@@ -1,4 +1,5 @@
 import { css } from '@emotion/react';
+import InputGroup from 'components/InputGroup';
 
 import Input from '../../../components/Input';
 import palette from '../../../lib/palette';
@@ -13,11 +14,11 @@ const List = (props: ListProps) => {
 				<h4 css={listCaption}>단어/문장과 뜻을 채워 넣으세요.</h4>
 				<h4 css={listCaption}>키보드만으로 편하게 작성할 수 있습니다.</h4>
 
-				<form css={form}>
+				<form css={form} onSubmit={e => e.preventDefault()}>
 					<Input label="리스트 제목" />
 
 					{/* InputGroup */}
-					<div css={inputGroup}>INPUT GROUP</div>
+					<InputGroup />
 					<div css={listTotalCount}>1 / 3</div>
 					<button css={listFormButton}>리스트 생성</button>
 				</form>
@@ -54,11 +55,6 @@ const listCaption = css`
 
 const form = css`
 	margin-top: 54px;
-`;
-
-const inputGroup = css`
-	margin-top: 30px;
-	max-height: 520px;
 `;
 
 const listTotalCount = css`

@@ -1,17 +1,19 @@
-import { css } from '@emotion/react';
+import { css, SerializedStyles } from '@emotion/react';
 
 import palette from '../../lib/palette';
 
 export type InputProps = {
 	label?: string;
 	type?: string;
+	css?: SerializedStyles;
 };
 
-const Input = ({ label, type = 'text' }: InputProps) => {
+const Input = (props: InputProps) => {
+	const { label, type = 'text' } = props;
 	return (
 		<div css={inputLayout}>
 			{label && <span css={inputLabel}>{label}</span>}
-			<input type={type} css={input} />
+			<input type={type} css={input} {...props} />
 		</div>
 	);
 };
