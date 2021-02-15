@@ -29,12 +29,16 @@ const inputLabel = css`
 
 	margin-bottom: 4px;
 `;
+
 const input = css`
 	width: 350px;
 	padding: 0px 10px;
-	height: 40px;
+	height: 50px;
+
+	font-size: 18px;
 
 	border: 1px solid ${palette.blue[600]};
+	border-radius: 5px;
 `;
 
 export default Input;
