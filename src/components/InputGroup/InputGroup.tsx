@@ -1,6 +1,7 @@
 import { css } from '@emotion/react';
 
-import Input from '../../components/Input';
+import Input from '@components/Input';
+// import Input from '../../components/Input';
 
 export type InputGroupProps = {};
 
