@@ -1,5 +1,3 @@
-const CracoAlias = require('craco-alias');
-
 const emotionPresetOptions = {};
 
 const emotionBabelPreset = require('@emotion/babel-preset-css-prop').default(
@@ -14,15 +12,4 @@ module.exports = {
 			// your other plugins
 		],
 	},
-	plugins: [
-		{
-			plugin: CracoAlias,
-			options: {
-				source: 'tsconfig',
-				baseUrl: './src',
-				tsConfigPath: './tsconfig.extend.json',
-				debug: true,
-			},
-		},
-	],
 };
