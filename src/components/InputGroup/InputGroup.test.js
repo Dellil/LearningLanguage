@@ -1,19 +1,25 @@
-import { render } from '@testing-library/react';
+import { render, fireEvent } from '@testing-library/react';
 
 import InputGroup from 'components/InputGroup';
 
 describe('InputGroup Component', () => {
-	it('Should be rendered content Input', () => {
-		const { getByPlaceholderText } = render(<InputGroup />);
-		const contentInput = getByPlaceholderText('내용을 입력해주세요.');
+	it('Should be generated New Line of InputRow', () => {
+		const { getAllByRole, getByText } = render(<InputGroup />);
+		const createButton = getByText('새 줄');
+		fireEvent.click(createButton);
+		const rows = getAllByRole('row');
 
-		expect(contentInput).toBeTruthy();
+		expect(rows).toHaveLength(2);
 	});
 
-	it('Should be rendered meaning Input', () => {
-		const { getByPlaceholderText } = render(<InputGroup />);
+	// TODO => 여러 인풋들이 만들어져있을 때, 인풋 생성버튼을 누르면 어디로 가야할까요?
+	// it('Should be generated New Line after Current InputRow', () => {
+	// 	const { getAllByRole, getByText, queryByText } = render(<InputGroup />);
+	// 	const createButton = getByText('새 줄');
+	// 	fireEvent.click(createButton);
 
-		const meaningInput = getByPlaceholderText('뜻을 입력해주세요.');
-		expect(meaningInput).toBeTruthy();
-	});
+	// 	const firstCreateButton = queryByText('새 줄');
+	// 	fireEvent.click(firstCreateButton);
+
+	// });
 });

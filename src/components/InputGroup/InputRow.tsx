@@ -1,17 +1,27 @@
+import { MouseEvent } from 'react';
 import { css } from '@emotion/react';
 
 import Input from 'components/Input';
 import palette from 'lib/palette';
 
-export type InputRowProps = {};
+export type InputRowProps = {
+	row: {
+		id: number;
+		content: string;
+		meanings: string[];
+	};
+	onCreateClick: (e: MouseEvent<HTMLButtonElement>) => void;
+};
 
-const InputRow = (props: InputRowProps) => {
+const InputRow = ({ onCreateClick }: InputRowProps) => {
 	return (
-		<div css={rowLayout}>
+		<div css={rowLayout} role="row">
 			<Input css={rowInput} placeholder="단어 혹은 문장을 입력해주세요." />
 			<Input css={rowInput} placeholder="뜻을 입력해주세요." />
 			<div css={buttons}>
-				<button css={button}>새 줄</button>
+				<button onClick={onCreateClick} css={button}>
+					새 줄
+				</button>
 				<button css={button}>새 뜻</button>
 				<button css={button}>삭제</button>
 			</div>
@@ -49,6 +59,11 @@ const button = css`
 	}
 
 	transition: color, background-color 0.15s;
+	&:focus {
+		color: ${palette.white};
+		background-color: ${palette.blue.a400};
+	}
+
 	&:hover {
 		color: ${palette.white};
 		background-color: ${palette.blue.a400};
