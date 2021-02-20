@@ -26,7 +26,6 @@ const inputLayout = css`
 
 const inputLabel = css`
 	color: ${palette.blue[600]};
-	font-weight: bold;
 	font-size: 14px;
 	line-height: 16.8px;
 

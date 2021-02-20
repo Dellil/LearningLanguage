@@ -14,7 +14,6 @@ const InputGroupLabel = (props: InputGroupLabelProps) => {
 };
 
 const label = css`
-	font-weight: bold;
 	font-size: 14px;
 
 	color: ${palette.blue[600]};

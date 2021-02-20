@@ -47,6 +47,17 @@ const button = css`
 	&:not(:last-of-type) {
 		border-right: 1px solid ${palette.blue[600]};
 	}
+
+	transition: color, background-color 0.15s;
+	&:hover {
+		color: ${palette.white};
+		background-color: ${palette.blue.a400};
+	}
+
+	&:active {
+		color: ${palette.white};
+		background-color: ${palette.blue[900]};
+	}
 `;
 
 export default InputRow;

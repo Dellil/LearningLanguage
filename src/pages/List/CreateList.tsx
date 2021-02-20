@@ -15,7 +15,10 @@ const CreateList = (props: CreateListProps) => {
 				<h4 css={listCaption}>키보드만으로 편하게 작성할 수 있습니다.</h4>
 
 				<form css={form} onSubmit={e => e.preventDefault()}>
-					<Input label="리스트 제목" />
+					<Input
+						label="리스트 제목"
+						placeholder="리스트 제목을 입력해주세요."
+					/>
 
 					{/* InputGroup */}
 					<InputGroup />
