@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-import Input from '@components/Input';
+import Input from '../Input';
 // import Input from '../../components/Input';
 
 export type InputGroupProps = {};
@@ -21,6 +21,7 @@ const InputGroup = (props: InputGroupProps) => {
 					css={css`
 						width: 500px;
 					`}
+					placeholder="내용을 입력해주세요."
 				/>
 				<Input
 					css={css`

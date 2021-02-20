@@ -6,14 +6,15 @@ export type InputProps = {
 	label?: string;
 	type?: string;
 	css?: SerializedStyles;
+	placeholder?: string;
 };
 
 const Input = (props: InputProps) => {
-	const { label, type = 'text' } = props;
+	const { label, type = 'text', placeholder } = props;
 	return (
 		<div css={inputLayout}>
 			{label && <span css={inputLabel}>{label}</span>}
-			<input type={type} css={input} {...props} />
+			<input type={type} css={input} placeholder={placeholder} {...props} />
 		</div>
 	);
 };
