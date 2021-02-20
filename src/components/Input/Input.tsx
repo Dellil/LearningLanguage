@@ -41,6 +41,10 @@ const input = css`
 
 	border: 1px solid ${palette.blue[600]};
 	border-radius: 5px;
+
+	&:focus {
+		box-shadow: 0px 0px 0px 2px ${palette.blue[100]};
+	}
 `;
 
 export default Input;
