@@ -5,12 +5,11 @@ import * as Sentry from '@sentry/react';
 import { Integrations } from '@sentry/tracing';
 
 // PAGES FOLDER
-// CREATE
-import List from './pages/create/List';
+import { CreateList } from 'pages/List';
 
 // COMPONENTS FOLDER
-import AppLayout from './components/AppLayout';
-import Sidebar from './components/Sidebar';
+import AppLayout from 'components/AppLayout';
+import Sidebar from 'components/Sidebar';
 
 const App = () => {
 	return (
@@ -21,7 +20,7 @@ const App = () => {
 				</AppLayout.Side>
 				<AppLayout.Main>
 					<Switch>
-						<Route path="/create/list" exact component={List} />
+						<Route path="/create/list" exact component={CreateList} />
 
 						{/* For Development! */}
 						<Redirect to="/create/list" />

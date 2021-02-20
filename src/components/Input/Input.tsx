@@ -1,6 +1,6 @@
 import { css, SerializedStyles } from '@emotion/react';
 
-import palette from '../../lib/palette';
+import palette from 'lib/palette';
 
 export type InputProps = {
 	label?: string;
@@ -30,7 +30,7 @@ const inputLabel = css`
 	font-size: 14px;
 	line-height: 16.8px;
 
-	margin-bottom: 4px;
+	margin-bottom: 6px;
 `;
 
 const input = css`

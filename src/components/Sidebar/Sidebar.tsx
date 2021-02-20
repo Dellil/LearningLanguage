@@ -1,7 +1,7 @@
 import { css } from '@emotion/react';
 
-import SidebarItem from '../SidebarItem';
-import palette from '../../lib/palette';
+import SidebarItem from 'components/SidebarItem';
+import palette from 'lib/palette';
 
 export type SidebarProps = {};
 

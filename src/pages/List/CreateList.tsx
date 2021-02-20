@@ -1,12 +1,12 @@
 import { css } from '@emotion/react';
 import InputGroup from 'components/InputGroup';
 
-import Input from '../../../components/Input';
-import palette from '../../../lib/palette';
+import Input from 'components/Input';
+import palette from 'lib/palette';
 
-export type ListProps = {};
+export type CreateListProps = {};
 
-const List = (props: ListProps) => {
+const CreateList = (props: CreateListProps) => {
 	return (
 		<div css={listLayout}>
 			<div css={list}>
@@ -71,4 +71,4 @@ const listFormButton = css`
 	background-color: ${palette.blue.a400};
 `;
 
-export default List;
+export default CreateList;

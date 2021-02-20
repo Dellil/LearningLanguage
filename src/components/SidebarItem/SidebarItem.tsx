@@ -1,9 +1,8 @@
 import { NavLink } from 'react-router-dom';
 import { css } from '@emotion/react';
 
-import Icon from 'lib/Icon';
-import { Icons } from '../../lib/Icon';
-import palette from '../../lib/palette';
+import Icon, { Icons } from 'lib/Icon';
+import palette from 'lib/palette';
 
 export type SidebarItemProps = {
 	icon: Icons;
