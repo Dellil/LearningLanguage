@@ -8,12 +8,12 @@ export type InputRowProps = {};
 const InputRow = (props: InputRowProps) => {
 	return (
 		<div css={rowLayout}>
-			<Input placeholder="단어 혹은 문장을 입력해주세요." />
-			<Input placeholder="뜻을 입력해주세요." />
+			<Input css={rowInput} placeholder="단어 혹은 문장을 입력해주세요." />
+			<Input css={rowInput} placeholder="뜻을 입력해주세요." />
 			<div css={buttons}>
-				<button>새 줄</button>
-				<button>새 뜻</button>
-				<button>삭제</button>
+				<button css={button}>새 줄</button>
+				<button css={button}>새 뜻</button>
+				<button css={button}>삭제</button>
 			</div>
 		</div>
 	);
@@ -25,8 +25,28 @@ const rowLayout = css`
 	display: flex;
 `;
 
+const rowInput = css`
+	width: 500px;
+
+	margin-right: 10px;
+`;
+
 const buttons = css`
+	display: flex;
+	flex: 1;
 	border: 1px solid ${palette.blue[600]};
+	border-radius: 5px;
+`;
+
+const button = css`
+	width: 100%;
+	display: block;
+
+	color: ${palette.blue[800]};
+
+	&:not(:last-of-type) {
+		border-right: 1px solid ${palette.blue[600]};
+	}
 `;
 
 export default InputRow;

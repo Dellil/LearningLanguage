@@ -35,10 +35,10 @@ const inputLabel = css`
 
 const input = css`
 	width: 350px;
-	padding: 0px 10px;
+	padding: 0px 15px;
 	height: 50px;
 
-	font-size: 18px;
+	font-size: 15px;
 
 	border: 1px solid ${palette.blue[600]};
 	border-radius: 5px;
