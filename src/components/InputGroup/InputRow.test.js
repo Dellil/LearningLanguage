@@ -2,14 +2,14 @@ import { render } from '@testing-library/react';
 import InputRow from './InputRow';
 
 describe('InputRow Component', () => {
-	it('has Input that types the content', () => {
+	it('has Input that can fill in the content', () => {
 		const { getByPlaceholderText } = render(<InputRow />);
 		const contentInput = getByPlaceholderText('단어 혹은 문장을 입력해주세요.');
 
 		expect(contentInput).toBeTruthy();
 	});
 
-	it('has Input that types the meaning', () => {
+	it('has Input that can fill in the meaning', () => {
 		const { getByPlaceholderText } = render(<InputRow />);
 		const meaningInput = getByPlaceholderText('뜻을 입력해주세요.');
 
