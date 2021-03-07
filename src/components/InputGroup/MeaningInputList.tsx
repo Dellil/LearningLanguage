@@ -1,3 +1,4 @@
+import { css } from '@emotion/react';
 import Input from 'components/Input/Input';
 
 export type MeaningInputListProps = {
@@ -8,11 +9,20 @@ const MeaningInputList = ({ meanings }: MeaningInputListProps) => {
 	return (
 		<>
 			{meanings.map((meaning, i) => (
-				// eslint-disable-next-line react/no-array-index-key
-				<Input key={meaning + i} type="text" placeholder="뜻을 입력해주세요." />
+				<Input
+					// eslint-disable-next-line react/no-array-index-key
+					key={meaning + i}
+					type="text"
+					placeholder="뜻을 입력해주세요."
+					css={input}
+				/>
 			))}
 		</>
 	);
 };
+
+const input = css`
+	width: 500px;
+`;
 
 export default MeaningInputList;

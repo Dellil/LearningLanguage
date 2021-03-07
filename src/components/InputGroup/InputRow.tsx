@@ -27,7 +27,7 @@ const InputRow = ({
 			</div>
 			<div css={buttons}>
 				<button onClick={onCreateClick} css={button}>
-					새 줄
+					새 정의
 				</button>
 				<button onClick={onCreateMeaningClick(row.id)} css={button}>
 					새 뜻
