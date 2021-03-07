@@ -1,28 +1,37 @@
 import { MouseEvent } from 'react';
 import { css } from '@emotion/react';
 
-import Input from 'components/Input';
 import palette from 'lib/palette';
+import Input from 'components/Input';
+import MeaningInputList from './MeaningInputList';
+import { inputType } from './InputGroup';
 
 export type InputRowProps = {
-	row: {
-		id: number;
-		content: string;
-		meanings: string[];
-	};
+	row: inputType;
 	onCreateClick: (e: MouseEvent<HTMLButtonElement>) => void;
+	onCreateMeaningClick: (
+		id: number,
+	) => (e: MouseEvent<HTMLButtonElement>) => void;
 };
 
-const InputRow = ({ onCreateClick }: InputRowProps) => {
+const InputRow = ({
+	row,
+	onCreateClick,
+	onCreateMeaningClick,
+}: InputRowProps) => {
 	return (
 		<div css={rowLayout} role="row">
 			<Input css={rowInput} placeholder="단어 혹은 문장을 입력해주세요." />
-			<Input css={rowInput} placeholder="뜻을 입력해주세요." />
+			<div css={[rowInput, meaningInputs]}>
+				<MeaningInputList meanings={row.meanings} />
+			</div>
 			<div css={buttons}>
 				<button onClick={onCreateClick} css={button}>
 					새 줄
 				</button>
-				<button css={button}>새 뜻</button>
+				<button onClick={onCreateMeaningClick(row.id)} css={button}>
+					새 뜻
+				</button>
 				<button css={button}>삭제</button>
 			</div>
 		</div>
@@ -39,6 +48,12 @@ const rowInput = css`
 	width: 500px;
 
 	margin-right: 10px;
+`;
+
+const meaningInputs = css`
+	& div:not(:first-of-type) {
+		margin-top: 8px;
+	}
 `;
 
 const buttons = css`
