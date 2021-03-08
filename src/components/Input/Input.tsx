@@ -6,15 +6,30 @@ export type InputProps = {
 	label?: string;
 	type?: string;
 	css?: SerializedStyles;
+	value: string;
+	onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 	placeholder?: string;
 };
 
 const Input = (props: InputProps) => {
-	const { label, type = 'text', placeholder } = props;
+	const {
+		label,
+		type = 'text',
+		placeholder,
+		value,
+		onChange,
+		css: styling,
+	} = props;
 	return (
-		<div css={inputLayout}>
+		<div css={[inputLayout, styling]}>
 			{label && <span css={inputLabel}>{label}</span>}
-			<input type={type} css={input} placeholder={placeholder} {...props} />
+			<input
+				type={type}
+				css={input}
+				placeholder={placeholder}
+				value={value}
+				onChange={onChange}
+			/>
 		</div>
 	);
 };

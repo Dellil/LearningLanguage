@@ -8,6 +8,8 @@ describe('InputRow Component', () => {
 		meanings: [''],
 	};
 
+	const INPUT_TEXT = 'learning language project is god god';
+
 	it('단어 혹은 문장을 쓸 수 있는 인풋이 있다.', () => {
 		const mockMeaningCreateClick = jest.fn();
 		const { getByPlaceholderText } = render(
@@ -33,7 +35,7 @@ describe('InputRow Component', () => {
 		const { getByText } = render(
 			<InputRow row={ROW} onCreateMeaningClick={mockMeaningCreateClick} />,
 		);
-		expect(getByText('새 줄')).toBeTruthy();
+		expect(getByText('새 정의')).toBeTruthy();
 		expect(getByText('새 뜻')).toBeTruthy();
 		expect(getByText('삭제')).toBeTruthy();
 	});

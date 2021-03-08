@@ -18,6 +18,8 @@ const CreateList = (props: CreateListProps) => {
 					<Input
 						label="리스트 제목"
 						placeholder="리스트 제목을 입력해주세요."
+						value=""
+						onChange={() => console.log('asdf')}
 					/>
 
 					{/* InputGroup */}

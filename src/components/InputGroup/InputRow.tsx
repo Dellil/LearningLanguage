@@ -21,7 +21,12 @@ const InputRow = ({
 }: InputRowProps) => {
 	return (
 		<div css={rowLayout} role="row">
-			<Input css={rowInput} placeholder="단어 혹은 문장을 입력해주세요." />
+			<Input
+				css={rowInput}
+				value={row.content}
+				onChange={() => console.log('asdf')}
+				placeholder="단어 혹은 문장을 입력해주세요."
+			/>
 			<div css={[rowInput, meaningInputs]}>
 				<MeaningInputList meanings={row.meanings} />
 			</div>

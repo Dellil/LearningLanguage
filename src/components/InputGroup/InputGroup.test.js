@@ -3,9 +3,9 @@ import { render, fireEvent } from '@testing-library/react';
 import InputGroup from 'components/InputGroup';
 
 describe('InputGroup Component', () => {
-	it('새 줄 버튼을 클릭하면 새 줄이 생성 된다.', () => {
+	it('새 정의 버튼을 클릭하면 새 정의가 생성 된다.', () => {
 		const { getAllByRole, getByText } = render(<InputGroup />);
-		const createButton = getByText('새 줄');
+		const createButton = getByText('새 정의');
 		fireEvent.click(createButton);
 		const rows = getAllByRole('row');
 

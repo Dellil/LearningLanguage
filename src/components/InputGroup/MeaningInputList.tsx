@@ -12,6 +12,8 @@ const MeaningInputList = ({ meanings }: MeaningInputListProps) => {
 				<Input
 					// eslint-disable-next-line react/no-array-index-key
 					key={meaning + i}
+					value={meanings[i]}
+					onChange={() => console.log('하와와')}
 					type="text"
 					placeholder="뜻을 입력해주세요."
 					css={input}
