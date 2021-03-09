@@ -22,8 +22,8 @@ const CreateList = (props: CreateListProps) => {
 						onChange={() => console.log('asdf')}
 					/>
 
-					{/* InputGroup */}
 					<InputGroup />
+					{/* TODO 포커싱된 row / 전체 row 수 기능 구현 */}
 					<div css={listTotalCount}>1 / 3</div>
 					<button css={listFormButton}>리스트 생성</button>
 				</form>
