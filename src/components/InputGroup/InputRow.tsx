@@ -4,7 +4,7 @@ import { css } from '@emotion/react';
 import palette from 'lib/palette';
 import Input from 'components/Input';
 import MeaningInputList from './MeaningInputList';
-import { inputType } from './InputGroup';
+import { inputType } from './InputGroupa';
 
 export type InputRowProps = {
 	row: inputType;

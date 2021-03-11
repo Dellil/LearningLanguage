@@ -6,8 +6,8 @@ export type InputProps = {
 	label?: string;
 	type?: string;
 	css?: SerializedStyles;
-	value: string;
-	onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+	value?: string;
+	onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 	placeholder?: string;
 };
 
@@ -48,7 +48,7 @@ const inputLabel = css`
 `;
 
 const input = css`
-	width: 350px;
+	min-width: 350px;
 	padding: 0px 15px;
 	height: 50px;
 
