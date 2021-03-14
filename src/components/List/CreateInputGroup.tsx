@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 
-import CreateInputButton from './CreateInputButton';
+import CreateInputButtons from './CreateInputButtons';
 import CreateInputGroupLabel from './CreateInputGroupLabel';
 import CreateInputRows from './CreateInputRows';
 
@@ -12,7 +12,7 @@ const CreateInputGroup = (props: CreateInputGroupProps) => {
 		<div css={InputGroupLayout}>
 			<CreateInputGroupLabel />
 			<CreateInputRows />
-			<CreateInputButton />
+			<CreateInputButtons />
 		</div>
 	);
 };
