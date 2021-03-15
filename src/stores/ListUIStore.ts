@@ -1,13 +1,13 @@
 import { makeAutoObservable } from 'mobx';
 
 export default class ListUIStore {
-	isEdit = false;
+	isEditable: boolean = false;
 
 	constructor() {
 		makeAutoObservable(this);
 	}
 
 	setEdit(value: boolean) {
-		this.isEdit = value;
+		this.isEditable = value;
 	}
 }

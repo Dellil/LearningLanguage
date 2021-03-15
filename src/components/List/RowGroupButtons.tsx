@@ -18,17 +18,18 @@ const CreateInputButtons = (props: CreateInputButtonProps) => {
 	};
 
 	const onDefinitionFinishClick = () => {
+		console.log('버튼 인뎅');
 		listUIStore.setEdit(false);
 	};
 
 	return (
 		<div css={createInputButtonLayout}>
-			{!listUIStore.isEdit && (
+			{!listUIStore.isEditable && (
 				<DefinitionCreateButton onClick={onDefinitionCreateClick}>
 					+
 				</DefinitionCreateButton>
 			)}
-			{listUIStore.isEdit && (
+			{listUIStore.isEditable && (
 				<div
 					css={css`
 						display: flex;
