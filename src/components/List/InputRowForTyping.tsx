@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { css } from '@emotion/react';
 import { observer } from 'mobx-react-lite';
 
@@ -8,12 +8,27 @@ import palette from 'lib/palette';
 export interface InputRowForTypingProps {}
 
 const InputRowForTyping = (props: InputRowForTypingProps) => {
-	const ref = useRef<HTMLInputElement | null>(null);
-	useEffect(() => {
-		console.log('TODO');
-	}, []);
-
 	const { listStore, listUIStore } = useStore();
+	const [definition, setDefinition] = useState('');
+	const [meaning, setMeaning] = useState('');
+
+	const onDefinitionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		const { value } = e.target;
+		setDefinition(value);
+	};
+
+	const onMeaningChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		const { value } = e.target;
+		setMeaning(value);
+	};
+
+	const onDefinitionBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+		listStore.setRowForInputDefinition(definition);
+	};
+
+	const onMeaningBlur = (e: React.FocusEvent<HTMLInputElement>) => {
+		listStore.setRowForInputMeaning(meaning);
+	};
 
 	return (
 		<>
@@ -21,17 +36,21 @@ const InputRowForTyping = (props: InputRowForTypingProps) => {
 				<div css={createInputRowLayout}>
 					<div css={createInput}>
 						<input
-							ref={ref}
 							type="text"
 							placeholder="DEFINITION"
-							// TODO
-							onBlur={() => {
-								listStore.setRowForInputDefinition(ref?.current.value);
-							}}
+							value={definition}
+							onChange={onDefinitionChange}
+							onBlur={onDefinitionBlur}
 						/>
 					</div>
 					<div css={createInput}>
-						<input type="text" placeholder="MEANING" />
+						<input
+							type="text"
+							placeholder="MEANING"
+							value={meaning}
+							onChange={onMeaningChange}
+							onBlur={onMeaningBlur}
+						/>
 					</div>
 				</div>
 			)}
@@ -49,7 +68,8 @@ const createInput = css`
 
 	& > input {
 		width: 100%;
-
+		height: 50px;
+		padding: 0px 15px;
 		border: 1px solid ${palette.blue[600]};
 		border-radius: 5px;
 	}

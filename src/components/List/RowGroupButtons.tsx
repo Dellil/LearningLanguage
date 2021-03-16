@@ -8,7 +8,7 @@ import palette from 'lib/palette';
 export interface CreateInputButtonProps {}
 
 const CreateInputButtons = (props: CreateInputButtonProps) => {
-	const { listUIStore } = useStore();
+	const { listStore, listUIStore } = useStore();
 	const onCreateClick = () => {
 		console.log('으아악!');
 	};
@@ -18,8 +18,9 @@ const CreateInputButtons = (props: CreateInputButtonProps) => {
 	};
 
 	const onDefinitionFinishClick = () => {
-		console.log('버튼 인뎅');
 		listUIStore.setEdit(false);
+		console.log(listStore.rowForInputDefinition);
+		console.log(listStore.rowForInputMeaning);
 	};
 
 	return (
