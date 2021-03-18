@@ -1,6 +1,6 @@
 import { makeAutoObservable } from 'mobx';
 
-type Row = {
+export type Row = {
 	definition: string;
 	meaning: string;
 };

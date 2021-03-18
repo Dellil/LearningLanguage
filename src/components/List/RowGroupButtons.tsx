@@ -19,8 +19,18 @@ const CreateInputButtons = (props: CreateInputButtonProps) => {
 
 	const onDefinitionFinishClick = () => {
 		listUIStore.setEdit(false);
-		console.log(listStore.rowForInputDefinition);
-		console.log(listStore.rowForInputMeaning);
+		listStore.pushRow({
+			definition: listStore.rowForInputDefinition,
+			meaning: listStore.rowForInputMeaning,
+		});
+		listStore.setRowForInputDefinition('');
+		listStore.setRowForInputMeaning('');
+	};
+
+	const onDefinitionCancelClick = () => {
+		listUIStore.setEdit(false);
+		listStore.setRowForInputDefinition('');
+		listStore.setRowForInputMeaning('');
 	};
 
 	return (
@@ -39,7 +49,7 @@ const CreateInputButtons = (props: CreateInputButtonProps) => {
 					<DefinitionCreateButton onClick={onDefinitionFinishClick}>
 						완료
 					</DefinitionCreateButton>
-					<DefinitionCreateButton onClick={onDefinitionFinishClick}>
+					<DefinitionCreateButton onClick={onDefinitionCancelClick}>
 						취소
 					</DefinitionCreateButton>
 				</div>
