@@ -20,6 +20,10 @@ export default class ListStore {
 
 	rows: Row[] = [];
 
+	get getRows() {
+		return this.rows;
+	}
+
 	setRows(rows: Row[]) {
 		this.rows = rows;
 	}

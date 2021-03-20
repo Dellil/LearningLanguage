@@ -1,6 +1,7 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
 import { observer } from 'mobx-react-lite';
+import { toJS } from 'mobx';
 
 import { useStore } from 'hooks';
 import palette from 'lib/palette';
@@ -10,7 +11,9 @@ export interface CreateInputButtonProps {}
 const CreateInputButtons = (props: CreateInputButtonProps) => {
 	const { listStore, listUIStore } = useStore();
 	const onCreateClick = () => {
-		console.log('으아악!');
+		listUIStore.setEdit(false);
+		// TODO => 백엔드 완성되면 데이터 보내기
+		console.log(toJS(listStore.getRows));
 	};
 
 	const onDefinitionCreateClick = () => {
