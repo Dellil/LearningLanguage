@@ -13,7 +13,7 @@ const CreateList = (props: CreateListProps) => {
 				<FormTitle>리스트 생성하기</FormTitle>
 				<FormDescription>단어/문장과 뜻을 채워 넣으세요</FormDescription>
 				<FormDescription>
-					키보드 만으로 편하게 작성할 수 있습니다.
+					키보드 만으로 편하게 작성할 수 있습니다.(예정)
 				</FormDescription>
 				<CreateListForm />
 			</FormLayout>

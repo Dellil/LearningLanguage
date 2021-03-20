@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { css } from '@emotion/react';
 import { observer } from 'mobx-react-lite';
 
@@ -11,6 +11,11 @@ const InputRowForTyping = (props: InputRowForTypingProps) => {
 	const { listStore, listUIStore } = useStore();
 	const [definition, setDefinition] = useState('');
 	const [meaning, setMeaning] = useState('');
+
+	useEffect(() => {
+		setDefinition('');
+		setMeaning('');
+	}, [listUIStore.isEditable]);
 
 	const onDefinitionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const { value } = e.target;
