@@ -7,7 +7,7 @@ export default class ListUIStore {
 		makeAutoObservable(this);
 	}
 
-	setEdit(value: boolean) {
+	setEditable(value: boolean) {
 		this.isEditable = value;
 	}
 }

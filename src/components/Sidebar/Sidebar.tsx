@@ -28,6 +28,7 @@ const sidebar = css`
 
 	background-color: ${palette.blueGrey[900]};
 	border-radius: 10px;
+	box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
 `;
 
 const sidebarTitle = css`

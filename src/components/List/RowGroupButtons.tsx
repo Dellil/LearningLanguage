@@ -11,17 +11,17 @@ export interface CreateInputButtonProps {}
 const CreateInputButtons = (props: CreateInputButtonProps) => {
 	const { listStore, listUIStore } = useStore();
 	const onCreateClick = () => {
-		listUIStore.setEdit(false);
+		listUIStore.setEditable(false);
 		// TODO => 백엔드 완성되면 데이터 보내기
 		console.log(toJS(listStore.getRows));
 	};
 
 	const onDefinitionCreateClick = () => {
-		listUIStore.setEdit(true);
+		listUIStore.setEditable(true);
 	};
 
 	const onDefinitionFinishClick = () => {
-		listUIStore.setEdit(false);
+		listUIStore.setEditable(false);
 		listStore.pushRow({
 			definition: listStore.rowForInputDefinition,
 			meaning: listStore.rowForInputMeaning,
@@ -31,7 +31,7 @@ const CreateInputButtons = (props: CreateInputButtonProps) => {
 	};
 
 	const onDefinitionCancelClick = () => {
-		listUIStore.setEdit(false);
+		listUIStore.setEditable(false);
 		listStore.setRowForInputDefinition('');
 		listStore.setRowForInputMeaning('');
 	};

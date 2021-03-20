@@ -23,8 +23,4 @@ const createInputRowLayout = css`
 	flex-direction: column;
 `;
 
-const createInput = css`
-	width: 100%;
-`;
-
 export default observer(RowGroup);
