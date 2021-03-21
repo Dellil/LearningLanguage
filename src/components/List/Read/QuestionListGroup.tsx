@@ -22,8 +22,7 @@ const questionListGroup = css`
 	display: flex;
 	justify-content: space-evenly;
 	flex-wrap: wrap;
-	height: 100%;
-	padding-bottom: 95px;
+	height: calc(100% - 123px);
 	overflow-y: auto;
 `;
 

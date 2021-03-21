@@ -1,5 +1,4 @@
 import { css } from '@emotion/react';
-import styled from '@emotion/styled';
 
 import Icon from 'lib/Icon';
 import palette from 'lib/palette';
@@ -13,66 +12,18 @@ const QuestionList = ({ list }: QuestionListProps) => {
 	return (
 		<div css={questionListLayout}>
 			{/* Title of QuestionList */}
-			<div
-				css={css`
-					display: flex;
-					align-items: center;
-				`}
-			>
+			<div css={questionTitleLayout}>
 				<div>
-					<Icon
-						name="list"
-						css={css`
-							width: 28px;
-							height: 28px;
-							fill: ${palette.blueGrey[900]};
-						`}
-					/>
+					<Icon name="list" css={questionTitleIcon} />
 				</div>
-				<div
-					css={css`
-						margin-left: 12px;
-						font-size: 24px;
-						font-weight: bold;
-						color: ${palette.blueGrey[900]};
-					`}
-				>
-					{list.title}
-				</div>
+				<div css={questionTitle}>{list.title}</div>
 			</div>
 			{/* Description of QuestionList */}
-			<div
-				css={css`
-					margin-top: 24px;
-					color: ${palette.blueGrey[500]};
-					font-size: 18px;
-					height: 98px;
-				`}
-			>
-				{list.description}
-			</div>
+			<div css={questionDescription}>{list.description}</div>
 			{/* Bottom of QuestionList */}
-			<div
-				css={css`
-					display: flex;
-					justify-content: space-between;
-					align-items: center;
-				`}
-			>
-				<p
-					css={css`
-						color: ${palette.blueGrey[900]};
-					`}
-				>
-					{list.createdAt}
-				</p>
-				<div
-					css={css`
-						& svg {
-							fill: ${palette.yellow[600]};
-						}
-					`}
-				>
+			<div css={questionBottomLayout}>
+				<p css={questionCreated}>{list.createdAt}</p>
+				<div css={questionBottomIcon}>
 					{list.isBookmarked ? (
 						<Icon name="starFull" />
 					) : (
@@ -101,6 +52,47 @@ const questionListLayout = css`
 	padding: 20px;
 
 	user-select: none;
+`;
+
+const questionTitleLayout = css`
+	display: flex;
+	align-items: center;
+`;
+
+const questionTitleIcon = css`
+	width: 28px;
+	height: 28px;
+	fill: ${palette.blueGrey[900]};
+`;
+
+const questionTitle = css`
+	margin-left: 12px;
+	font-size: 24px;
+	font-weight: bold;
+	color: ${palette.blueGrey[900]};
+`;
+
+const questionDescription = css`
+	margin-top: 24px;
+	color: ${palette.blueGrey[500]};
+	font-size: 18px;
+	height: 98px;
+`;
+
+const questionBottomLayout = css`
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+`;
+
+const questionCreated = css`
+	color: ${palette.blueGrey[900]};
+`;
+
+const questionBottomIcon = css`
+	& svg {
+		fill: ${palette.yellow[600]};
+	}
 `;
 
 export default QuestionList;
