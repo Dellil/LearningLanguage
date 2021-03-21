@@ -17,7 +17,7 @@ const CreateInputButtons = (props: CreateInputButtonProps) => {
 		// TODO => 백엔드 완성되면 데이터 보내기
 		console.log(toJS(listStore.getRows));
 		// TODO => 리스트 생성후 리다이렉션 처리 하기
-		// history.replace('/list');
+		// history.replace('/');
 	};
 
 	const onDefinitionCreateClick = () => {

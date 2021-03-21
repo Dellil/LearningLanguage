@@ -8,6 +8,7 @@ export type InputProps = {
 	css?: SerializedStyles;
 	value?: string;
 	onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+	onBlur?: (e: React.FocusEvent<HTMLInputElement>) => void;
 	placeholder?: string;
 };
 
@@ -18,6 +19,7 @@ const Input = (props: InputProps) => {
 		placeholder,
 		value,
 		onChange,
+		onBlur,
 		css: styling,
 	} = props;
 	return (
@@ -29,6 +31,7 @@ const Input = (props: InputProps) => {
 				placeholder={placeholder}
 				value={value}
 				onChange={onChange}
+				onBlur={onBlur}
 			/>
 		</div>
 	);

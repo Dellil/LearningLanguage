@@ -5,6 +5,12 @@ export type Row = {
 	meaning: string;
 };
 
+export type QuestionList = {
+	title: string;
+	description: string;
+	rows: Row[];
+};
+
 export type List = {
 	title: string;
 	description: string;
@@ -115,6 +121,16 @@ export default class ListStore {
 
 	setListGroup(value: List[]) {
 		this.listGroup = value;
+	}
+
+	title = '';
+
+	get getTitle() {
+		return this.title;
+	}
+
+	setTitle(value: string) {
+		this.title = value;
 	}
 
 	rowForInputDefinition = '';
