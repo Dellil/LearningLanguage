@@ -5,7 +5,7 @@ import * as Sentry from '@sentry/react';
 import { Integrations } from '@sentry/tracing';
 
 // PAGES FOLDER
-import { CreateList } from 'pages/List';
+import { CreateList, ReadList } from 'pages/List';
 
 // COMPONENTS FOLDER
 import AppLayout from 'components/AppLayout';
@@ -20,10 +20,10 @@ const App = () => {
 				</AppLayout.Side>
 				<AppLayout.Main>
 					<Switch>
+						<Route path="/" exact component={ReadList} />
 						<Route path="/create/list" exact component={CreateList} />
-
 						{/* For Development! */}
-						<Redirect to="/create/list" />
+						<Redirect to="/" />
 					</Switch>
 				</AppLayout.Main>
 			</AppLayout>

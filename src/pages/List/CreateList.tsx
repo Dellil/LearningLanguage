@@ -1,6 +1,6 @@
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
-import CreateListForm from 'components/List/CreateListForm';
+import CreateListForm from 'components/List/Create/CreateListForm';
 
 import palette from 'lib/palette';
 
