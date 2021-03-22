@@ -5,6 +5,7 @@ Click [here](https://learninglanguage.netlify.app/) to enter this project!
 
 ### What were used for this project
 
+### Frontend
 - React
 - typescript
 - MobX
@@ -14,3 +15,6 @@ Click [here](https://learninglanguage.netlify.app/) to enter this project!
 - Figma
 
 ---
+
+### Backend
+- NestJS
