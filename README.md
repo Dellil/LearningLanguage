@@ -19,3 +19,4 @@ Click [here](https://learninglanguage.netlify.app/) to enter this project!
 
 ### Backend
 - NestJS
+- Prisma
